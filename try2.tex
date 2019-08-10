@@ -1,0 +1,110 @@
+\documentclass[UTF8]{ctexart}%中文短文所以使用ctexart，用[UTF8]选项说明编码
+\title{\heiti 杂谈勾股定理}
+\author{\kaishu 刘峻嘉}
+%标题和作者的字体可以直接修改，即加\kaishu或\heiti等
+\date{\today}
+
+
+\bibliographystyle{plain}%声明参考文献的格式（见3.3.1节）
+\usepackage{graphicx}    %插图功能由graphicx宏包提供，引入宏包后就可以用\includegraphics[]{}来命令插图了
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper,centering,scale=0.8}  %geometry宏包用于设计页面尺寸
+\usepackage[format=hang,font=small,textfont=it]{caption}    %用caption宏包可以用改变图表标题格式
+\usepackage[nottoc]{tocbibind}          %用tocbibind宏包可以增加目录的项目，默认会在目录中加入目录项本身、参考文献、索引等项目
+
+%begin前面的为导言区，用来对文档的性质做一些设置，或自定义一些命令
+
+\begin{document}
+
+\maketitle  %\maketitle实际输出论文标题
+\begin{abstract}
+     这是一篇关于勾股定理的小论文
+\end{abstract}
+\tableofcontents %命令输出目录
+\section{古代的勾股定理}
+起源于毕达哥拉斯，中国也早有研究过，见于欧几里德\footnote{欧几里德，约公元前330--275年。}《几何原本》
+的第XX页%上行的\footnote{}代表脚注
+······的数称为\emph{勾股数}。%\emph{}表示改变字体表强调
+\section{勾股定理的现代形式}
+\bibliography{math}  %提示TEX从文献数据库math中获取文献信息，打印参考文献列表
+近代的形式比较统一了
+啦啦啦
+
+
+啦啦啦
+
+啦啦啦  %只有空行的行才能起到文字另起一行的作用，且多个空行也只会换一行
+
+······答周公问：
+\begin{quote}
+\zihao{-3}\kaishu   %像这样修改字号等格式的命令会影响后面整个环境
+     勾广三，股修四，径隅五。
+\end{quote}         
+%类似这样\begin{}
+%······    
+%\end{}的形式就是一块环境，可以有也可以没有参数
+%定理也是一类环境
+%打出数学公式也可以用两个$$表示，将公式夹在中间
+
+于是我们得到$\angle A=\pi$
+
+或者也可以用
+\begin{equation}
+     a+b=c
+\end{equation}      %这样用可以在后面有公式号，另外两种则没有
+\begin{equation}
+2^{10}=1024
+\end{equation}
+\begin{equation}  
+60^\circ            %此标志代表°，也可以用输入法自带的度（°）
+\end{equation}
+
+或者这样
+\[a^2+b^2=c^2\]  %\[ \]是数学公式用的符号
+\begin{quotation}        %quotation会后缩，quote则不会
+     勾广三，股修四，径隅五。
+\end{quotation}
+%使用浮动体插入插图
+\begin{figure}[ht]  %参数[ht]表示浮动体可以出现在环境周围的文本所在处(here)和一页的顶部(top)
+     \centering
+     \includegraphics[width=10cm]{tree.jpg}
+     \caption{德国的一种枝干形状很有趣的树}       %caption命令给插图加上自动编号和标题
+     \label{fig:tower}        %给图形定义一个标签
+\end{figure}
+
+%表格一般都直接在LaTeX中完成的，表格的行、列对齐模式和表格线由tebular环境完成
+\begin{tabular}{|lll|}        %|lll|表示左对齐，|rrr|代表右对齐
+     \hline
+     直角边 $a$ & 直角边 $b$ & 斜边 $c$ \\  %在tabular环境内部，行与行之间用命令\\隔开，每行内部则是由&分开表格中横线用命令\hline产生
+     \hline
+     3 & 4 & 5 \\
+     5 & 12 & 13 \\
+     \hline
+\end{tabular}
+
+和以上表格对比
+
+\begin{table}[H]         %[H]表示就在此处不再浮动了，此功能在float宏包中
+     \begin{tabular}{|rrr|}
+          \hline
+          直角边 $a$ & 直角边 $b$ & 斜边 $c$ \\  
+          \hline
+          3 & 4 & 5 \\
+          5 & 12 & 13 \\
+          \hline 
+          \end{tabular}
+          \qquad        %此命令产生约2cm的空白
+          $(a^2+b^2=c^2)$
+%在表格比较小，行文又要求连贯的场合float宏包的这种不浮动的图表环境是很有用的
+\end{table}    
+
+
+
+%最后是参考文献列表（待续）
+
+
+
+\end{document}
+%百分号后是注释
+%
